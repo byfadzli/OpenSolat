@@ -1,0 +1,122 @@
+{
+  "expo": {
+    "name": "OpenSolat: Waktu Solat & Azan",
+    "slug": "opensolat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#121212",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.opensolat.malaysia",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "OpenSolat memerlukan lokasi anda untuk menentukan zon waktu solat JAKIM dan arah kiblat yang tepat.",
+        "UIBackgroundModes": [
+          "audio",
+          "fetch",
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "package": "org.opensolat.malaysia",
+      "adaptiveIcon": {
+        "backgroundColor": "#061618",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "VIBRATE",
+        "POST_NOTIFICATIONS"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#121212"
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "recordAudioAndroid": false,
+          "microphonePermission": false,
+          "enableBackgroundPlayback": true,
+          "enableBackgroundRecording": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/android-icon-monochrome.png",
+          "color": "#061618",
+          "sounds": [
+            "./assets/audio/azan_tv3.mp3",
+            "./assets/audio/azan_makkah.mp3",
+            "./assets/audio/azan_alafasy.mp3",
+            "./assets/audio/azan_masjid_negara.mp3",
+            "./assets/audio/azan_masjid_putra.mp3",
+            "./assets/audio/azan_abdul_basit.mp3",
+            "./assets/audio/azan_ustaz_fahmi.mp3",
+            "./assets/audio/azan_rtm.mp3",
+            "./assets/audio/subuh_alafasy.mp3",
+            "./assets/audio/subuh_rtm1.mp3",
+            "./assets/audio/subuh_ustaz_fahmi.mp3",
+            "./assets/audio/takbir_raya.mp3",
+            "./assets/audio/bip_ringkas.mp3",
+            "./assets/audio/chime_lembut.mp3"
+          ]
+        }
+      ],
+      "expo-location",
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "OpenSolatWidget",
+              "label": "OpenSolat - Waktu Solat",
+              "minWidth": "320dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 2,
+              "maxResizeWidth": "540dp",
+              "maxResizeHeight": "240dp",
+              "resizeMode": "horizontal|vertical",
+              "description": "Jadual 5 waktu solat rasmi JAKIM dan countdown solat",
+              "previewImage": "./assets/icon.png",
+              "updatePeriodMillis": 1800000
+            }
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dcfc9f13-985a-496e-950d-d75f0d2166e5"
+      }
+    },
+    "owner": "byfadzli"
+  }
+}
